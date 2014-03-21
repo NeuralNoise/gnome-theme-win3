@@ -1,0 +1,10 @@
+[X-GNOME-Metatheme]
+Name=Windows 3.0
+Type=X-GNOME-Metatheme
+Comment=Windows 3.0 Theme
+Encoding=UTF-8
+GtkTheme=Win3
+MetacityTheme=Win3
+IconTheme=Adwaita
+CursorTheme=Adwaita
+CursorSize=24
