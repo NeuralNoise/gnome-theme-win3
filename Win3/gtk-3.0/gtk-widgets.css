@@ -370,6 +370,7 @@ GtkComboBox .separator {
 }
 
 GtkComboBox .button {
+    background-color: @theme_entry_bg;
     padding: 0 4px;
 }
 
