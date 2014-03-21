@@ -94,5 +94,14 @@ class "GtkHScrollbar" style "scrollbar"
 style "menuitem" = "default"
 {
 	ythickness = 3
+    xthickness = 1
 }
 class "GtkMenuItem" style "menuitem"
+
+style "sepmenuitem" = "default"
+{
+	ythickness = 2
+    xthickness = 0
+    GtkMenuItem::horizontal-padding = 0
+}
+class "GtkSeparatorMenuItem" style "sepmenuitem"
