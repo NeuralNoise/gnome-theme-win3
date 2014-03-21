@@ -531,7 +531,6 @@ GtkComboBox .button {
 
 .menu .menuitem:insensitive {
     background-color: transparent;
-    border-style: none;
 }
 
 
@@ -539,7 +538,7 @@ GtkComboBox .button {
     border-style: solid;
     border-color: @theme_fg_color;
     border-width: 1px;
-
+    padding: 1px;
     color: @theme_fg_color;
 }
 
