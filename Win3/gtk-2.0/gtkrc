@@ -105,3 +105,10 @@ style "sepmenuitem" = "default"
     GtkMenuItem::horizontal-padding = 0
 }
 class "GtkSeparatorMenuItem" style "sepmenuitem"
+
+style "entry" = "default"
+{
+	ythickness = 3
+    xthickness = 3
+}
+class "GtkEntry" style "entry"
