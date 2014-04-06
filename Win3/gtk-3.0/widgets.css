@@ -133,18 +133,21 @@ GtkStatusbar GtkLabel
 {
 }
 
+GtkLayout,
 .view
 {
 	background-color:	@base_color;
 	color:			@text_color;
 }
 
+GtkLayout:selected,
 .view:selected
 {
 	background-color:	@selected_bg_color;
 	color:		@selected_fg_color;
 }
 
+GtkLayout:active,
 .view:active
 {
 	background-color:	@selected_bg_color;
@@ -217,28 +220,51 @@ GtkComboBox .separator {
 	border-width:		0px;
 }
 /**********************************************/
-column-header.button,
-column-header .button,
+.toolbar .button,
+.menubar .button,
+GtkComboBox .button,
 .combobox-entry .button,
 .scrollbar.button,
 .spinbutton .button
 {
 	background-color:	shade(@button_color, 0.9);
-    border-image: url('button-shallow.png') 2 3 3 2;
-    border-width:  2px 3px 3px 2px;
+
+    border-image: url('button-shallow.png') 2 2 2 2;
+    border-width:  2px 2px 2px 2px;
 }
+.toolbar .button:active,
+.toolbar .button:prelight:active,
+.menubar .button:active,
+.menubar .button:prelight:active,
 .scrollbar.button:active,
 .scrollbar.button:prelight:active,
 .combobox-entry .button:active,
 .combobox-entry .button:prelight:active,
+GtkComboBox .button:active,
+GtkComboBox .button:prelight:active,
 .spinbutton .button:active,
 .spinbutton .button:prelight:active
 {
 	background-color:	shade(@button_color, 0.9);
-    border-image: url('button-shallow-pressed.png') 3 2 2 3;
-    border-width:  3px 2px 2px 3px;
-}
 
+    border-image: url('button-shallow-pressed.png') 2 2 2 2;
+    border-width:  2px 2px 2px 2px;
+}
+column-header.button,
+column-header .button
+{
+    border-image: url('button-shallow.png') 2 2 2 2;
+    border-width:  2px 2px 2px 2px;
+}
+column-header.button:active,
+column-header .button:active,
+column-header.button:prelight:active,
+column-header .button:prelight:active
+{
+    border-image: url('button-shallow-pressed.png') 2 2 2 2;
+    border-width:  2px 2px 2px 2px;
+
+}
 
 /**********************************************/
 /* Members: GtkCheckButton, GtkRadioButton, GtkButton, GtkToggleButton. */
@@ -398,12 +424,6 @@ GtkComboBox .button
 	border-width:		0px 0px 1px 0px;
 }
 
-.menubar .button
-{
- /*   background: transparent;*/
-}
-
-
 .menubar .menuitem
 {
 	padding: 		3px 7px 2px 7px;
@@ -483,8 +503,8 @@ GtkNotebook
 	border-style: none;
 */
 	/*background-color:	shade(@button_color, 0.9);*/
-    border-image: url('button-shallow.png') 2 3 3 2;
-    border-width: 0px;
+    border-image: url('button-shallow.png') 2 2 2 2;
+    border-width: 2px;
 }
 
 .notebook tab,
@@ -501,8 +521,8 @@ tab
 */
 	padding: 		1px;
 	background-color:	shade(@button_color, 0.9);
-    border-image: url('button-shallow.png') 2 3 3 2;
-    border-width:  2px 3px 3px 2px;
+    border-image: url('button-shallow.png') 2 2 2 2;
+    border-width:  2px 2px 2px 2px;
 }
 
 .notebook tab:active,
@@ -515,8 +535,8 @@ tab:active
     border-top-width: 2px;
 */
 	background-color:	shade(@button_color, 0.9);
-    border-image: url('button-shallow-pressed.png') 3 2 2 3;
-    border-width:  3px 2px 2px 3px;
+    border-image: url('button-shallow-pressed.png') 2 2 2 2;
+    border-width:  2px 2px 2px 2px;
 	padding-bottom:		2px;
 }
 /**********************************************/
@@ -527,18 +547,28 @@ tab:active
 .sidebar.view 
 {
 	background-color:	shade(@bg_color, 1.05);
+    padding: 2px;
 }
-
+.sidebar.frame {
+    padding: 2px;
+}
 .sidebar row:prelight,
 .sidebar.view row:prelight 
 {
 	background-color:	@bg_color;
 }
 
+.sidebar .highlight {
+    font-style: italic;
+    font-weight: bold;
+	background-color:	@selected_bg_color;
+    color:              @selected_fg_color;
+}
 .sidebar row:selected,
 .sidebar row:selected:prelight
 {
 	background-color:	@selected_bg_color;
+    color:              @selected_fg_color;
 }
 /**********************************************/
 
@@ -609,21 +639,27 @@ GtkSwitch.trough:insensitive
 .frame 
 {
 	/* Members: GtkFrame. */
+    border-width: 1px;
 }
 
 .popup 
 {
 	/* Members: GtkMenu. */
 }
-
+GtkStatusBar>.frame
+{
+    border-width: 1px 0 1px 0;
+}
 GtkScrolledWindow,
 .scrolled-window 
 {
 	/* Members: GtkScrolledWindow. */
     border-width: 1px;
 }
-GtkScrolledWindow .frame,
-.scrolled-window .frame
+GtkScrolledWindow.frame,
+.scrolled-window.frame,
+GtkScrolledWindow>.frame,
+.scrolled-window>.frame
 {
     border-style: none;
 }

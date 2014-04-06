@@ -28,7 +28,8 @@
 @define-color button_color  #c0c0c0;
 @define-color tooltip_bg_color	#ffffe1;
 @define-color tooltip_fg_color	#000000;
-@define-color selected_bg_color	#7c9fc2;
+/*@define-color selected_bg_color	#7c9fc2;*/
+@define-color selected_bg_color	#000080;
 @define-color selected_fg_color	#ffffff;
 @define-color text_color	#000000;
 @define-color fg_color		#000000;
