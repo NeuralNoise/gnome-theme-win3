@@ -31,15 +31,20 @@ style "default"
 	GtkButton::child-displacement-y = 1
 
 	GtkRange::trough_border	= 0
-	GtkRange::slider_width	= 15
-	GtkRange::stepper_size	= 15
+	GtkRange::slider_width	= 20
+	GtkRange::stepper_size	= 20
+	GtkMenuItem::arrow-scaling = 0.6
+	GtkNotebook::tab-overlap = -3
 
 	GtkEntry::progress-border = { 0, 0, 0, 0 }
 
+	GtkScrolledWindow::scrollbar-spacing = 0
+    GtkScrolledWindow::scrollbars-within-bevel = 1
+
 	GtkScrollbar::min_slider_length	 = 30
-	GtkCheckButton::indicator_size	 = 13
-	GtkCheckMenuItem::indicator_size = 13
-	GtkRadioButton::indicator_size	 = 13
+	GtkCheckButton::indicator_size	 = 16
+	GtkCheckMenuItem::indicator_size = 16
+	GtkRadioButton::indicator_size	 = 16
 
 	GtkNotebook::tab_vborder = 1
 	GtkNotebook::tab_hborder = 1
@@ -55,6 +60,12 @@ style "default"
 	GtkMenu::vertical_padding    = 0
 	GtkMenuBar::internal-padding = 0
 	GtkToolbar::internal-padding = 1
+	GtkToolbar::button-relief = 1
+
+	GtkToolItemGroup::expander-size = 9
+	GtkExpander::expander-size = 9
+	GtkTreeView::expander-size = 9
+
 	GtkComboBox::appears-as-list = 1
 
 	# Widgets
@@ -91,25 +102,235 @@ style "entry"
 }
 
 
-style "notebook"
-{
-	bg[NORMAL] = shade(1.05, @bg_color)	# selected tab entire
-}
-
-
 style "tooltips"
 {
 	xthickness = 3
 	bg[NORMAL] = "#FFFFE1"
 }
 
+style "button"
+{
+  xthickness	= 1
+  ythickness	= 1
+
+  engine "pixmap"
+  {
+    image
+    {
+      function			= BOX
+      state			= NORMAL
+      file			= "button.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state			= PRELIGHT
+      file			= "button.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state			= ACTIVE
+      file			= "button-pressed.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }	
+    image 
+    {
+      function			= BOX
+      state			= INSENSITIVE
+      file			= "button.png"
+      border			= { 4, 4, 4, 4 }
+      stretch			= TRUE
+    }
+  }
+}
+
+style "slimbutton"
+{
+  xthickness	= 1
+  ythickness	= 1
+
+  engine "pixmap"
+  {
+    image
+    {
+      function			= BOX
+      state			= NORMAL
+      file			= "button-shallow.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state			= PRELIGHT
+      file			= "button-shallow.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }
+    image
+    {
+      function			= BOX
+      state			= ACTIVE
+      file			= "button-shallow-pressed.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }	
+    image 
+    {
+      function			= BOX
+      state			= INSENSITIVE
+      file			= "button-shallow.png"
+      border			= { 3, 3, 3, 3 }
+      stretch			= TRUE
+    }
+  }
+}
+
+style "notebook" = "slimbutton"
+{
+	xthickness = 2
+	ythickness = 2
+    bg[NORMAL] = shade(1.05, @bg_color)	# selected tab entire
+
+    engine "pixmap" 
+    {
+        image 
+        {
+            function        = EXTENSION
+                recolorable     = TRUE
+                state           = ACTIVE
+                file            = "button-shallow.png"
+                border          = { 3, 3, 3, 3 }
+                stretch         = TRUE
+        }
+        image 
+        {
+            function        = EXTENSION
+                recolorable     = TRUE
+                file            = "button-shallow-pressed.png"
+                border          = { 3, 3, 3, 3 }
+                stretch         = TRUE
+                gap_side        = BOTTOM
+        }
+        image 
+        {
+            function        = EXTENSION
+                recolorable     = TRUE
+                file            = "button-shallow-pressed.png"
+                border          = { 3, 3, 3, 3 }
+                stretch         = TRUE
+                gap_side        = TOP
+        }
+        image 
+        {
+            function        = EXTENSION
+                recolorable     = TRUE
+                file            = "button-shallow-pressed.png"
+                border          = { 3, 3, 3, 3 }
+                stretch         = TRUE
+                gap_side        = RIGHT
+        }
+        image 
+        {
+            function        = EXTENSION
+                recolorable     = TRUE
+                file            = "button-shallow-pressed.png"
+                border          = { 3, 3, 3, 3 }
+                stretch         = TRUE
+                gap_side        = LEFT
+        }
+#
+    }
+}
+
+style "scrollbar"
+{
+    engine "pixmap"  {
+        image
+        {
+          function			= SLIDER
+          state			= NORMAL
+          file			= "button-shallow.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }
+        image
+        {
+          function			= SLIDER
+          state			= PRELIGHT
+          file			= "button-shallow.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }
+        image
+        {
+          function			= SLIDER
+          state			= ACTIVE
+          file			= "button-shallow-pressed.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }	
+        image 
+        {
+          function			= SLIDER
+          state			= INSENSITIVE
+          file			= "button-shallow.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }
+        image
+        {
+          function			= BOX
+          state			= NORMAL
+          file			= "button-shallow.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }
+        image
+        {
+          function			= BOX
+          state			= PRELIGHT
+          file			= "button-shallow.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }
+        image
+        {
+          function			= BOX
+          state			= ACTIVE
+          file			= "button-shallow-pressed.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }	
+        image 
+        {
+          function			= BOX
+          state			= INSENSITIVE
+          file			= "button-shallow.png"
+          border			= { 3, 3, 3, 3 }
+          stretch			= TRUE
+        }
+
+    }
+}
 
 class "GtkWidget"	style "default"
 class "GtkMenu"		style "menu"
 class "GtkEntry"	style "entry"
+class "GtkButton"   style "button"
+
+widget_class "*<GtkToolbar>*<GtkButton>" style "slimbutton"
+widget_class "*<GtkTreeView>*<GtkButton>" style "slimbutton"
 
 widget_class "*<GtkMenuItem>*" style "menuitem"
-widget_class "*<GtkNotebook>*" style "notebook"
+class "GtkNotebook" style "notebook"
+#class "Gtk?Scrollbar" style "scrollbar"
 
 widget "gtk-tooltip*" 	style "tooltips"
 

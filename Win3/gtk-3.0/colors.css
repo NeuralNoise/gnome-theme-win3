@@ -23,9 +23,9 @@
  * @define-color text-color #ff00ff;
  */
 
-@define-color base_color	#faf7f2;
+@define-color base_color	#ffffff;
 @define-color bg_color		#ffffff; 
-@define-color button_color  #c0c0c0;
+@define-color button_color  #bfbfbf;
 @define-color tooltip_bg_color	#ffffe1;
 @define-color tooltip_fg_color	#000000;
 /*@define-color selected_bg_color	#7c9fc2;*/
