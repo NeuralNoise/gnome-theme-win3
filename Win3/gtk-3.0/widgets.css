@@ -44,7 +44,7 @@
     -GtkRange-trough-under-steppers: true;
     -GtkScrollBar-fixed-slider-length: true;
 	-GtkRange-trough-border:		0px;
-	-GtkNotebook-tab-overlap:		-3px;
+	-GtkNotebook-tab-overlap:		-4px;
 
     -GtkWidget-focus-padding: 1;
     -GtkWidget-focus-line-width: 1;
@@ -322,7 +322,7 @@ column-header .button:prelight:active
 }
 .button:insensitive 
 {
-	background-color:	shade(@button_color, 0.95);
+	background-color:	shade(@button_color, 0.90);
 	color:			mix(@fg_color, @base_color, 0.5);
 }
 /**********************************************/
