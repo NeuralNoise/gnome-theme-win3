@@ -39,10 +39,11 @@
     -GtkScrolledWindow-scrollbars-within-bevel: false;
 	-GtkComboBox-appears-as-list:		true;
 	
-    -GtkRange-slider-width: 16px;
-    -GtkRange-stepper-size: 16px;
+    -GtkRange-slider-width: 18px;
+    -GtkRange-stepper-size: 18px;
     -GtkRange-trough-under-steppers: true;
-    -GtkScrollBar-fixed-slider-length: true;
+    -GtkScrollbar-fixed-slider-length: true;
+    -GtkScrollbar-min-slider-length: 18px;
 	-GtkRange-trough-border:		0px;
 	-GtkNotebook-tab-overlap:		-4px;
 
@@ -122,6 +123,7 @@ GtkStatusbar GtkLabel
 
 /**********************************************/
 /* Members: GtkTooltip. */
+NautilusFloatingBar,
 .tooltip
 {
 	background-color:	@tooltip_bg_color;
